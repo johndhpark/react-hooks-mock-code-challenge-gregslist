@@ -21,14 +21,14 @@ function App() {
       });
   }, []);
 
-  function onListingDelete(id) {
+  function onDeleteAListing(id) {
     // body...
     setFilteredListings((prevListings) =>
       prevListings.filter((listing) => listing.id != id)
     );
   }
 
-  function onListingFilter(term) {
+  function onFilterListings(term) {
     // body...
     setFilteredListings(
       allListings.filter((listing) =>
@@ -39,10 +39,10 @@ function App() {
 
   return (
     <div className="app">
-      <Header onListingFilter={onListingFilter} />
+      <Header onFilterListings={onFilterListings} />
       <ListingsContainer
         listings={filteredListings}
-        onListingDelete={onListingDelete}
+        onDeleteAListing={onDeleteAListing}
       />
     </div>
   );
