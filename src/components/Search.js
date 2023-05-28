@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Search({ onListingFilter }) {
+function Search({ onFilterListings }) {
   const [term, setTerm] = useState("");
 
   function handleInputChange(e) {
@@ -10,7 +10,7 @@ function Search({ onListingFilter }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    onListingFilter(term);
+    onFilterListings(term);
   }
 
   return (

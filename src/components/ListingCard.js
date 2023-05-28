@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ListingCard({ listing, onListingDelete }) {
+function ListingCard({ listing, onDeleteAListing }) {
   const [favorited, setFavorited] = useState(false);
 
   const { id, description, image, location } = listing;
@@ -23,7 +23,7 @@ function ListingCard({ listing, onListingDelete }) {
         return response.json();
       })
       .then(() => {
-        onListingDelete(id);
+        onDeleteAListing(id);
       });
   }
 
